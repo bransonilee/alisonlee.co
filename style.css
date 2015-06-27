@@ -25,7 +25,6 @@ a {
 	top: 0;
 	left: 0;
 	width: 147.394px;
-	height: 100%;
 	z-index: 11;
 }
 .logo {
@@ -153,8 +152,7 @@ div #contact:hover {
 
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px), only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 	.sidebar {
-		position: fixed;
-		overflow: auto;
+		position: absolute;
 		width: 240px;
 	}
 	.content {
@@ -163,14 +161,14 @@ div #contact:hover {
 		padding-bottom: 48px;
 	}
 	.logo {
-		margin: 48px auto 50%;
+		margin: 48px auto 100px;
 		width: 154px;
 		height: 154px;
 	}
 	.icon {
 		width: 60px;
 		height: 60px;
-		margin-bottom: 30%;
+		margin-bottom: 70px;
 	}
 	.content-text {
 		font-size: 50px;

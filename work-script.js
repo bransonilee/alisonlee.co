@@ -103,5 +103,12 @@ $.get("assets/projects.txt", function(data) {
 	$(window).on("hashchange", function() {
 		checkHash();
 	});
+	$(window).scroll(function(){
+		if ($(".sidebar").height() > $(window).height()) {
+			$(".sidebar").css("position", "absolute");
+			var scrollBottom = $(window).scrollTop() + $(window).height();
+			$(".sidebar").css("top", Math.max(0, scrollBottom - $(".sidebar").height()));
+		}
+	});
 });
 });
