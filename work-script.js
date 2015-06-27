@@ -106,7 +106,7 @@ $.get("assets/projects.txt", function(data) {
 	$(window).scroll(function () {
 		var scrollBottom = $(window).scrollTop() + $(window).height();
 		if ($(window).height () < $(".sidebar").height ()) {
-			if (scrollBottom > $(".sidebar").height()) {
+			if (scrollBottom >= $(".sidebar").height()) {
 				$(".sidebar").css({"position": "fixed", "top": 0 + $(window).height() - $(".sidebar").height()});
 				console.log($(".sidebar").css("top"));
 			} else {
