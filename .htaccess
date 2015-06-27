@@ -7,5 +7,3 @@ RewriteRule ^(.+)$ $1.html [L,QSA]
 
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*\.html\ HTTP/
 RewriteRule ^(.*)\.html$ /$1 [R=301,L]
-
-RewriteRule ^index.html$ / [R,L]
