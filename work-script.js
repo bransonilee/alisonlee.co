@@ -103,11 +103,15 @@ $.get("assets/projects.txt", function(data) {
 	$(window).on("hashchange", function() {
 		checkHash();
 	});
-	$(window).scroll(function(){
-		if ($(".sidebar").height() > $(window).height()) {
-			$(".sidebar").css("position", "absolute");
-			var scrollBottom = $(window).scrollTop() + $(window).height();
-			$(".sidebar").css("top", Math.max(0, scrollBottom - $(".sidebar").height()));
+	$(window).scroll(function () {
+		var scrollBottom = $(window).scrollTop() + $(window).height();
+		if ($(window).height () < $(".sidebar").height ()) {
+			if (scrollBottom > $(".sidebar").height()) {
+				$(".sidebar").css({"position": "fixed", "top": 0 + $(window).height() - $(".sidebar").height()});
+				console.log($(".sidebar").css("top"));
+			} else {
+				$(".sidebar").css({"position": "absolute", "top": 0});
+			}
 		}
 	});
 });
