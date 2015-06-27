@@ -1,6 +1,5 @@
 $(document).ready(function() {
 	function openProject (project) {
-		console.log("openproject:" + project);
 		window.scrollTo(0, 0);
 		$(".content").empty();
 		var text;
@@ -41,18 +40,15 @@ $(document).ready(function() {
 					var next = curPage === projects.length-3 ? 0 : curPage+3;
 					$(".content").append("<div class='nav-wrapper'><a class ='nav' id='prev' href='#" + projects[prev] + "'>Previous</a><a class='nav' id='next' href='#" + projects[next] + "'>Next</a></div>");
 					location.hash = project;
-					console.log("switched to:" + location.hash);
 				});
 });
 });
 }
 function checkHash() {
 	var page = location.hash.substring(1, location.hash.length);
-	console.log("check hash:" + page);
 	if (page !== "") {
 		var index = projectNum(page);
 		if (index !== -1) {
-			console.log("curpage" + curPage + " index" + index);
 			if (curPage !== index) {
 				curPage = index;
 				openProject(page, curPage);
@@ -105,7 +101,6 @@ $.get("assets/projects.txt", function(data) {
 	});
 	checkHash();
 	$(window).on("hashchange", function() {
-		console.log("found:" + location.hash);
 		checkHash();
 	});
 });
