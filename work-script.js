@@ -110,22 +110,20 @@ $.get("assets/projects.txt", function(data) {
 			$(".sidebar").css({"top": "0px", "position": "fixed"});
 		}
 	});
-	function checkScroll () {
-		$(window).scroll(function () {
-			var windowHeight = document.documentElement.clientHeight;
-			var sidebarHeight = $(".sidebar").height();
-			var scrollBottom = $(window).scrollTop() + windowHeight;
-			console.log("position: " + $(".sidebar").css("position"));
-			if (windowHeight < sidebarHeight) {
-				console.log(windowHeight + "<" + sidebarHeight);
-				if (scrollBottom >= sidebarHeight) {
-					$(".sidebar").css({"position": "fixed", "top": windowHeight - sidebarHeight});
-					console.log($(".sidebar").css("top"));
-				} else {
-					$(".sidebar").css({"position": "absolute", "top": 0});
-				}
+	$(window).scroll(function () {
+		var windowHeight = document.documentElement.clientHeight;
+		var sidebarHeight = $(".sidebar").height();
+		var scrollBottom = $(window).scrollTop() + windowHeight;
+		console.log("position: " + $(".sidebar").css("position"));
+		if (windowHeight < sidebarHeight) {
+			console.log(windowHeight + "<" + sidebarHeight);
+			if (scrollBottom >= sidebarHeight) {
+				$(".sidebar").css({"position": "fixed", "top": windowHeight - sidebarHeight});
+				console.log($(".sidebar").css("top"));
+			} else {
+				$(".sidebar").css({"position": "absolute", "top": 0});
 			}
-		});
-	}
+		}
+	});
 });
 });
