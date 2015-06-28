@@ -104,22 +104,18 @@ $.get("assets/projects.txt", function(data) {
 		checkHash();
 	});
 	$(window).resize (function() {
-		console.log("window changed, new height " + $(window).height());
-		console.log("sidebar " + $(".sidebar").height());
-		if ($(window).height() >= $(".sidebar").height()) {
+		if (window.innerHeight >= $(".sidebar").height()) {
 			$(".sidebar").css({"top": "0px", "position": "fixed"});
 		}
 	});
 	$(window).scroll(function () {
-		var windowHeight = document.documentElement.clientHeight;
+		var windowHeight = $(".sidebar").width() === 240 ? window.outerHeight : window.innerHeight;
 		var sidebarHeight = $(".sidebar").height();
 		var scrollBottom = $(window).scrollTop() + windowHeight;
-		console.log("position: " + $(".sidebar").css("position"));
+		console.log($(".sidebar").css("top"));
 		if (windowHeight < sidebarHeight) {
-			console.log(windowHeight + "<" + sidebarHeight);
-			if (scrollBottom >= sidebarHeight) {
+			if (scrollBottom > sidebarHeight) {
 				$(".sidebar").css({"position": "fixed", "top": windowHeight - sidebarHeight});
-				console.log($(".sidebar").css("top"));
 			} else {
 				$(".sidebar").css({"position": "absolute", "top": 0});
 			}
