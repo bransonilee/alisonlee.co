@@ -103,18 +103,29 @@ $.get("assets/projects.txt", function(data) {
 	$(window).on("hashchange", function() {
 		checkHash();
 	});
-	$(window).scroll(function () {
-		var scrollBottom = $(window).scrollTop() + $(window).height();
-		var windowHeight = $(window).height();
-		var sidebarHeight = $(".sidebar").height();
-		if (windowHeight < sidebarHeight) {
-			if (scrollBottom >= sidebarHeight) {
-				$(".sidebar").css({"position": "fixed", "top": windowHeight - sidebarHeight});
-				console.log($(".sidebar").css("top"));
-			} else {
-				$(".sidebar").css({"position": "absolute", "top": 0});
-			}
+	$(window).resize (function() {
+		console.log("window changed, new height " + $(window).height());
+		console.log("sidebar " + $(".sidebar").height());
+		if ($(window).height() >= $(".sidebar").height()) {
+			$(".sidebar").css({"top": "0px", "position": "fixed"});
 		}
 	});
+	function checkScroll () {
+		$(window).scroll(function () {
+			var windowHeight = document.documentElement.clientHeight;
+			var sidebarHeight = $(".sidebar").height();
+			var scrollBottom = $(window).scrollTop() + windowHeight;
+			console.log("position: " + $(".sidebar").css("position"));
+			if (windowHeight < sidebarHeight) {
+				console.log(windowHeight + "<" + sidebarHeight);
+				if (scrollBottom >= sidebarHeight) {
+					$(".sidebar").css({"position": "fixed", "top": windowHeight - sidebarHeight});
+					console.log($(".sidebar").css("top"));
+				} else {
+					$(".sidebar").css({"position": "absolute", "top": 0});
+				}
+			}
+		});
+	}
 });
 });
