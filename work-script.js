@@ -105,9 +105,11 @@ $.get("assets/projects.txt", function(data) {
 	});
 	$(window).scroll(function () {
 		var scrollBottom = $(window).scrollTop() + $(window).height();
-		if ($(window).height () < $(".sidebar").height ()) {
-			if (scrollBottom >= $(".sidebar").height()) {
-				$(".sidebar").css({"position": "fixed", "top": 0 + $(window).height() - $(".sidebar").height()});
+		var windowHeight = $(window).height();
+		var sidebarHeight = $(".sidebar").height();
+		if (windowHeight < sidebarHeight) {
+			if (scrollBottom >= sidebarHeight) {
+				$(".sidebar").css({"position": "fixed", "top": windowHeight - sidebarHeight});
 				console.log($(".sidebar").css("top"));
 			} else {
 				$(".sidebar").css({"position": "absolute", "top": 0});
