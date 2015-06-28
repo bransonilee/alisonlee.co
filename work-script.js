@@ -114,8 +114,11 @@ $.get("assets/projects.txt", function(data) {
 		var scrollBottom = $(window).scrollTop() + windowHeight;
 		if (windowHeight < sidebarHeight) {
 			if (scrollBottom >= sidebarHeight) {
-				$(".sidebar").css({"position": "fixed", "top": windowHeight - sidebarHeight});
-			} else {
+				if ($(".sidebar").css("position") === "absolute") {
+					$(".sidebar").css({"position": "fixed", "top": windowHeight - sidebarHeight});
+				}
+			} 
+			else {
 				$(".sidebar").css({"position": "absolute", "top": 0});
 			}
 		}
