@@ -1,11 +1,12 @@
 txt
 txt
-gif
+jpg
 jpg
 txt
 jpg
-jpg
-vid
 gif
+jpg
+jpg
+jpg
 jpg
 jpg

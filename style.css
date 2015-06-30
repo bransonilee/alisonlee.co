@@ -7,6 +7,7 @@
 	font-family: 'Metric-Regular';
 	src: url("assets/fonts/metric-webfont/Regular/metric-regular.otf");
 }
+
 @font-face {
 	font-family: 'Metric-Semibold';
 	src: url("assets/fonts/metric-webfont/Semibold/metric-semibold.otf");
@@ -16,6 +17,7 @@
 a {
 	text-decoration: none;
 }
+
 .content-text a {
 	color: #00B394;
 }
@@ -27,12 +29,14 @@ a {
 	width: 147.394px;
 	z-index: 11;
 }
+
 .logo {
 	display: block;
 	width: 50.5455px;
 	height: 50.5455px;
 	margin: 40px auto;
 }
+
 .icon {
 	display: block;
 	width: 21.372px;
@@ -42,21 +46,27 @@ a {
 	background-repeat: no-repeat;
 	overflow: visible;
 }
+
 div #about {
 	background-image: url("assets/img/1.png");
 }
+
 div #about:hover, div #about.curpage {
 	background-image: url("assets/img/1-over.png");
 }
+
 div #work {
 	background-image: url("assets/img/2.png");
 }
+
 div #work:hover, div #work.curpage {
 	background-image: url("assets/img/2-over.png");
 }
+
 div #contact {
 	background-image: url("assets/img/3.png");
 }
+
 div #contact:hover {
 	background-image: url("assets/img/3-over.png");
 }
@@ -79,11 +89,13 @@ div #contact:hover {
 	display: block;
 	width: 100%;
 }
+
 .cover-text {
 	position: absolute;
 	bottom: 0;
 	left: 0;
 }
+
 .cover-title, .cover-desc {
 	position: relative;
 	display: block;
@@ -93,10 +105,12 @@ div #contact:hover {
 	font-size: 6vw;
 	line-height: 5vw;
 }
+
 .cover-desc {
 	font-size: 3vw;
 	line-height: 3.7vw;
 }
+
 .cover {
 	display: block;
 	width: 100%;
@@ -115,15 +129,18 @@ div #contact:hover {
 	width: 100%;
 	margin-bottom: 30px;
 }
+
 .afterImg {
 	margin-top: 30px;
 }
+
 .video {
 	position: relative;
 	padding-bottom: 56.25%;
 	padding-top: 25px;
 	width: 100%;
 }
+
 .video iframe {
 	position: absolute;
 	top: 0;
@@ -131,11 +148,13 @@ div #contact:hover {
 	width: 100%;
 	height: 100%;
 }
+
 .nav-wrapper {
 	display: block;
 	width: 100%;
 	overflow: auto;
 }
+
 .nav {
 	font-family: 'Metric-Regular';
 	color: #919191;
@@ -143,9 +162,11 @@ div #contact:hover {
 	display: inline-block;
 	margin-top: 20px;
 }
+
 .nav:hover {
 	color: #00B394;
 }
+
 #prev {
 	margin-right: 20px;
 }

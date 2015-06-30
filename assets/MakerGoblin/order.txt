@@ -1,8 +1,7 @@
+txt
 jpg
 txt
 jpg
 jpg
-jpg
-jpg
-jpg
+gif
 jpg
